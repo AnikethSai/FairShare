@@ -137,7 +137,7 @@ def expense_summary(expSheet, originalNames, p1, peo):
             summary += f"    {originalNames[split['name']]} owes {originalNames[details['payer']]}: {split['amount']:.2f}\n"
         summary += '-' * 50 + '\n'
 
-    summary += '\n2) RAW BALANCES (Without Greedy Algorithm):\n'
+    summary += '\n2) RAW BALANCES :\n'
     summary += '-' * 50 + '\n'
     done = set()
     raw_settlements_made = False
@@ -155,7 +155,7 @@ def expense_summary(expSheet, originalNames, p1, peo):
     if not raw_settlements_made:
         summary += "No debts to settle.\n"
 
-    summary += '\n3) FINAL SIMPLIFIED BALANCES (Greedy Algorithm):\n'
+    summary += '\n3) FINAL SIMPLIFIED BALANCES:\n'
     summary += '-' * 50 + '\n'
 
     net_balances = {person: 0.0 for person in peo}
